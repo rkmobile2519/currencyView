@@ -79,15 +79,15 @@ public class CurrencyEditText extends AppCompatEditText {
         });
     }
 
-    public double getRateWithOutCurrency() {
+    public String getRateWithOutCurrency() {
         if (isNullOrEmpty(getText().toString().trim())) {
-            return 0;
+            return "0";
         } else {
             String amount = getText().toString().trim().replace(strCurrency, "");
             if (amount.equals(".")) {
-                return 0;
+                return "0";
             } else {
-                return Double.parseDouble(amount);
+                return amount;
             }
         }
     }

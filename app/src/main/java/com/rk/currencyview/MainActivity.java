@@ -26,12 +26,12 @@ public class MainActivity extends AppCompatActivity {
 //        currency_edt.setMaxLimit(999);
 
         final CurrencyTextView currency_tv = findViewById(R.id.currency_tv);
-        currency_tv.setCurrecy(currency);
+        currency_tv.setCurrency(currency);
 
         findViewById(R.id.btnDone).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                currency_tv.setText("" + currency_edt.getRateWithOutCurrency());
+                currency_tv.setText(currency_edt.getRateWithOutCurrency());
             }
         });
     }

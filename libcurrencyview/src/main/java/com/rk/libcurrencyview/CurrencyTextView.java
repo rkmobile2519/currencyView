@@ -34,7 +34,7 @@ public class CurrencyTextView extends AppCompatTextView {
             try {
                 // The comma in the format specifier does the trick
                 DecimalFormat formatter = (DecimalFormat) NumberFormat.getInstance(Locale.getDefault());
-                formatter.applyPattern("#,##,##,##,###.##");
+                formatter.applyPattern("#,##,##,##,###.###");
                 formatedString = sCurrency + formatter.format(Double.parseDouble(text.toString()));  // adds rupee symbol and thousand seperater
             } catch (NumberFormatException e) {
                 Log.d(TAG, "Rupee TextView NumberFormatException");
@@ -46,7 +46,7 @@ public class CurrencyTextView extends AppCompatTextView {
         }
     }
 
-    public void setCurrecy(String sCurrency) {
+    public void setCurrency(String sCurrency) {
         this.sCurrency = sCurrency;
     }
 
