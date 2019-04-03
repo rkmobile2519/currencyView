@@ -80,10 +80,25 @@ public class CurrencyEditText extends AppCompatEditText {
     }
 
     public double getRateWithOutCurrency() {
-        if (isNullOrEmpty(getText().toString())) {
+        if (isNullOrEmpty(getText().toString().trim())) {
             return 0;
+        } else {
+            String amount = getText().toString().trim().replace(strCurrency, "");
+            if (amount.equals(".")) {
+                return 0;
+            } else {
+                return Double.parseDouble(amount);
+            }
         }
-        return Double.valueOf(getText().toString().replace(strCurrency, "").trim());
+    }
+
+    public String getRateWithCurrency() {
+        String amount = getText().toString().trim();
+        if (amount.equals(".")) {
+            return strCurrency + 0;
+        } else {
+            return isNullOrEmpty(amount) ? strCurrency + 0 : amount;
+        }
     }
 
     public void setCurrency(String currencySymbol) {
@@ -94,13 +109,12 @@ public class CurrencyEditText extends AppCompatEditText {
         this.maxLimit = maxLimit;
     }
 
-    public static boolean isNullOrEmpty(String s) {
+    private boolean isNullOrEmpty(String s) {
         //return (s == null) || (s.length() == 0) || (s.equalsIgnoreCase("null"));
         if (s == null)
             return true;
         if (s.length() == 0)
             return true;
         return s.equalsIgnoreCase("null");
-
     }
 }
