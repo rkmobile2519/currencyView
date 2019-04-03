@@ -1,4 +1,4 @@
-# currencyView
+# CurrencyView
 
 A view where user can add or view currency with amount. This library provide an editfield  and textview feature both.
 
@@ -21,8 +21,10 @@ Step 1 : Add it in your root build.gradle at the end of repositories:
 	
 Step 2 : Add the dependency
 
+[![](https://jitpack.io/v/rkmobile2519/currencyView.svg)](https://jitpack.io/#rkmobile2519/currencyView)
+
 	dependencies {
-	        implementation 'com.github.rkmobile2519:customedittext:1.0.0'
+	        implementation 'com.github.rkmobile2519:currencyView:1.0.0'
 	}
 
 
